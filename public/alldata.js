@@ -1,9 +1,9 @@
 function AllData(){
     const [data, setData] = React.useState('');
-    const [user, setUser] = React.useState(true);
+    const [user, setUser] = React.useState("");
 
     firebase.auth().onAuthStateChanged((firebaseUser) => {
-        return firebaseUser ? setUser(true) : setUser(false)
+        return firebaseUser ? setUser(firebaseUser) : setUser("")
     }); 
 
     React.useEffect(() => {
