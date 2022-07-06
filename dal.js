@@ -1,6 +1,6 @@
 const MongoClient = require('mongodb').MongoClient;
-// const url = 'mongodb://docker:mongopw@localhost:27017';
-const url = 'mongodb://docker:mongopw@localhost:49155';
+const url = 'mongodb://docker:mongopw@localhost:27017';
+// const url = 'mongodb://docker:mongopw@localhost:49155';
 let db = null;
 
 // connect to mongo
