@@ -1,10 +1,15 @@
 function AllData(){
-    const [data, setData] = React.useState('');    
+    const [data, setData] = React.useState('');
+    const [user, setUser] = React.useState(true);
+
+    firebase.auth().onAuthStateChanged((firebaseUser) => {
+        return firebaseUser ? setUser(true) : setUser(false)
+    }); 
 
     React.useEffect(() => {
         
         // fetch all accounts from API
-        let email = "test@test.com"
+        let email = user.email;
         fetch(`/account/findOne/${email}`)
             .then(response => response.json())
             .then(data => {
