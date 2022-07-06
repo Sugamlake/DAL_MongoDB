@@ -25,8 +25,8 @@ app.get('/account/create/:name/:email/:password', function (req, res) {
                 dal.create(req.params.name,req.params.email,req.params.password).
                     then((user) => {
                         console.log(user);
-                        res.send(user);            
-                    });            
+                        res.send(user);
+                    });
             }
 
         });
@@ -85,7 +85,7 @@ app.get('/account/update/:email/:amount', function (req, res) {
         then((response) => {
             console.log(response);
             res.send(response);
-    });    
+    });
 });
 
 // all accounts

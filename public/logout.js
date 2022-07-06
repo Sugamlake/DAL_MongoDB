@@ -1,0 +1,3 @@
+const Logout = () => {
+    return logout()
+}

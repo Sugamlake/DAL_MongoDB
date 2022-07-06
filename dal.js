@@ -1,5 +1,6 @@
 const MongoClient = require('mongodb').MongoClient;
 const url = 'mongodb://localhost:27017';
+// const url = 'mongodb://docker:mongopw@localhost:49154';
 let db = null;
 
 // connect to mongo
@@ -15,9 +16,7 @@ function create(name, email, password) {
     // TODO: populate this function based off the video
     return new Promise((resolve, reject) => {
         const collection = db.collection("users");
-        const doc = {
-            name, email, password, balance: 0
-        };
+        const doc = {name, email, password, balance: 0};
         collection.insertOne(doc,{w:1}, function(err, result) {
             err ? reject(err) : resolve(doc);
         })
