@@ -1,23 +1,24 @@
 function AllData(){
     const [data, setData] = React.useState('');
-    const [user, setUser] = React.useState("");
+    const [email, setEmail] = React.useState("");
 
     firebase.auth().onAuthStateChanged((firebaseUser) => {
-        return firebaseUser ? setUser(firebaseUser) : setUser("")
-    }); 
+        return firebaseUser ? setEmail(firebaseUser.email) : setEmail("")
+    });
+
+    console.log(email);
 
     React.useEffect(() => {
-        
+
         // fetch all accounts from API
-        let email = user.email;
         fetch(`/account/findOne/${email}`)
             .then(response => response.json())
             .then(data => {
                 console.log(data);
-                setData(data);                
+                setData(data);
             });
 
-    }, []);
+    }, [email]);
 
     return (<>
         <h5>All Data in Store:</h5>
