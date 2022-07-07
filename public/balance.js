@@ -44,7 +44,7 @@ function BalanceForm(props){
             setBalance(user.balance);
             console.log('JSON:', data);
         } catch(err) {
-            props.setStatus(text)
+            props.setStatus("You have a balance of: " + JSON.parse(text).balance)
             console.log('err:', text);
         }
     });

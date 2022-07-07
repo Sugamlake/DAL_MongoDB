@@ -1,6 +1,8 @@
 const Route       = ReactRouterDOM.Route;
+const Redirect    = ReactRouterDOM.Redirect;
 const Link        = ReactRouterDOM.Link;
 const HashRouter  = ReactRouterDOM.HashRouter;
+const Switch      = ReactRouterDOM.Switch;
 const UserContext = React.createContext(null);
 
 function Card(props){

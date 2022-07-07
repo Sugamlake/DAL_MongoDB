@@ -1,3 +1,5 @@
+// import {emailLogin} from "./auth";
+
 function Login(){
   const [show, setShow]     = React.useState(true);
   const [status, setStatus] = React.useState('');    
@@ -43,6 +45,7 @@ function LoginForm(props){
             console.log('err:', text);
         }
     });
+    emailLogin(email,password);
   }
 
 
